@@ -7,9 +7,7 @@ pipeline {
         stage("Test App"){
             steps{
                 echo "testing app..."
-                sh 'pwd'
-                sh 'cd app'
-                sh 'npm test'
+                sh 'npm test --prefix /var/jenkins_home/workspace/node-project'
             }
         }
         stage("Build App Image"){
