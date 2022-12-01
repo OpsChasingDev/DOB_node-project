@@ -4,9 +4,19 @@ pipeline {
         nodejs 'NodeJS 19.2.0'
     }
     stages {
-        stage("Pull Code"){
+        stage("Test App"){
             steps{
-                echo "pulling code"
+                echo "testing app..."
+            }
+        }
+        stage("Build App Image"){
+            steps{
+                echo "building app..."
+            }
+        }
+        stage("Push Image to Docker Hub"){
+            steps{
+                echo "pushing image..."
             }
         }
     }
