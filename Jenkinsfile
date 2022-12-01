@@ -7,6 +7,7 @@ pipeline {
         stage("Test App"){
             steps{
                 echo "testing app..."
+                sh 'cd /app'
                 sh 'npm test'
             }
         }
