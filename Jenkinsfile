@@ -8,7 +8,7 @@ pipeline {
             steps{
                 echo "testing app..."
                 sh 'pwd'
-                sh 'cd /app'
+                sh 'cd app'
                 sh 'npm test'
             }
         }
