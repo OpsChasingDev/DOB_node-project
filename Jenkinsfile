@@ -5,18 +5,20 @@ pipeline {
     }
     stages {
         stage("Test App"){
-            steps{
-                echo "testing app..."
-                sh 'npm test --prefix /var/jenkins_home/workspace/node-project/app'
+            steps {
+                script {
+                    echo "testing app..."
+                    sh 'npm test --prefix /var/jenkins_home/workspace/node-project/app'
+                }
             }
         }
         stage("Build App Image"){
-            steps{
+            steps {
                 echo "building app..."
             }
         }
         stage("Push Image to Docker Hub"){
-            steps{
+            steps {
                 echo "pushing image..."
             }
         }
