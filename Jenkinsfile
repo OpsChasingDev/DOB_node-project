@@ -4,7 +4,7 @@ pipeline {
         nodejs 'NodeJS 19.2.0'
     }
     stages {
-        stage("pull code from git repo"){
+        stage("Pull Code"){
             steps{
                 echo "pulling code"
             }
