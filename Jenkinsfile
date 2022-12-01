@@ -7,7 +7,7 @@ pipeline {
         stage("Test App"){
             steps{
                 echo "testing app..."
-                sh 'npm test --prefix /var/jenkins_home/workspace/node-project'
+                sh 'npm test --prefix /var/jenkins_home/workspace/node-project/app'
             }
         }
         stage("Build App Image"){
