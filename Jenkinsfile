@@ -15,9 +15,14 @@ pipeline {
                 }
             }
         }
-        stage("Build App Image"){
+        stage("Build App"){
             steps {
-                echo "building app..."
+                script {
+                    dir("app") {
+                        echo "building app..."
+                        sh 'npm start'
+                    }
+                }
             }
         }
         stage("Push Image to Docker Hub"){
