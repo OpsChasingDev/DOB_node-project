@@ -23,12 +23,15 @@ pipeline {
                 }
             }
         }
-        stage("Push Image to Docker Hub"){
+        stage("Dockerhub Login") {
+            steps {
+                echo "logging in to Dockerhub..."
+            }
+        }
+        stage("Push Image to Dockerhub"){
             steps {
                 echo "pushing image..."
-                withDockerRegistry([credentialsId:"Dockerhub", url: "https://hub.docker.com/repository/docker/opschasingdev/dockerhub"]){
-                    sh 'docker push opschasingdev/dockerhub:node-app-1.0.0'
-                }
+                sh 'docker push opschasingdev/dockerhub:node-app-1.0.0'
             }
         }
     }
