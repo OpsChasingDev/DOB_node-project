@@ -15,13 +15,11 @@ pipeline {
                 }
             }
         }
-        stage("Build App"){
+        stage("Build App Image"){
             steps {
                 script {
-                    dir("app") {
-                        echo "building app..."
-                        sh 'npm start'
-                    }
+                    echo "building app docker image..."
+                    sh 'docker build -t opschasingdev/dockerhub:node-app-1.0.0 .'
                 }
             }
         }
