@@ -1,5 +1,6 @@
 - config Jenkins to build node app and run without docker
 - config Jenkins to build app docker image
+- change Jenkins to run app test in the app container
 - config Jenkins to push image to docker hub repo
 - config Jenkins to increment app version
 - config Jenkins to increment image version
