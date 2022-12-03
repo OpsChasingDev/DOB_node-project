@@ -25,7 +25,7 @@ pipeline {
                 }
             }
         }
-        stage("Test App"){
+        stage("Test App") {
             steps {
                 script {
                     dir("app") {
@@ -36,7 +36,7 @@ pipeline {
                 }
             }
         }
-        stage("Build App Image"){
+        stage("Build App Image") {
             steps {
                 script {
                     echo "building app docker image..."
@@ -54,10 +54,17 @@ pipeline {
                 }
             }
         }
-        stage("Push Image to Dockerhub"){
+        stage("Push Image to Dockerhub") {
             steps {
                 echo "pushing image..."
                 sh 'docker push opschasingdev/dockerhub:node-app-${IMAGE_NAME}'
+            }
+        }
+        stage("Commit to Git") {
+            steps {
+                script {
+                    
+                }
             }
         }
     }
