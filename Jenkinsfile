@@ -40,7 +40,7 @@ pipeline {
             steps {
                 script {
                     echo "building app docker image..."
-                    sh 'docker build -t opschasingdev/dockerhub:node-app-1.0.0 .'
+                    sh 'docker build -t opschasingdev/dockerhub:node-app-${IMAGE_NAME} .'
                 }
             }
         }
@@ -57,7 +57,7 @@ pipeline {
         stage("Push Image to Dockerhub"){
             steps {
                 echo "pushing image..."
-                sh 'docker push opschasingdev/dockerhub:node-app-1.0.0'
+                sh 'docker push opschasingdev/dockerhub:node-app-${IMAGE_NAME}'
             }
         }
     }
