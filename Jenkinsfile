@@ -11,6 +11,17 @@ pipeline {
                 }
             }
         }
+        stage ("Define version increment") {
+            steps {
+                script {
+                    dir("app") {
+                        def packageJson = readJSON file: 'package.json'
+                        def version = packageJson.version
+                        sh "echo $version"
+                    }
+                }
+            }
+        }
         stage("Test App"){
             steps {
                 script {
