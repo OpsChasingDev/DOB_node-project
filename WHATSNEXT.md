@@ -4,3 +4,4 @@
 - (DONE) config Jenkins to increment app version
 - (DONE) config Jenkins to increment image version
 - config Jenkins to commit updated versions to git
+  - ref [this link](https://www.jenkins.io/blog/2021/07/27/git-credentials-binding-phase-1/)
