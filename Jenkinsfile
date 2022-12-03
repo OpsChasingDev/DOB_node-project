@@ -4,6 +4,13 @@ pipeline {
         nodejs 'NodeJS 19.2.0'
     }
     stages {
+        stage ("Debugging Output") {
+            steps {
+                script {
+                    sh "echo $BUILD_NUMBER"
+                }
+            }
+        }
         stage("Test App"){
             steps {
                 script {
