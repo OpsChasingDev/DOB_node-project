@@ -60,10 +60,17 @@ pipeline {
                 sh 'docker push opschasingdev/dockerhub:node-app-${IMAGE_NAME}'
             }
         }
-        stage("Commit to Git") {
+        stage("Github Login") {
             steps {
                 script {
                     
+                }
+            }
+        }
+        stage("Commit to Git") {
+            steps {
+                script {
+                    echo "commit to git"
                 }
             }
         }
