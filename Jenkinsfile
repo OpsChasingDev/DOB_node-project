@@ -25,7 +25,12 @@ pipeline {
         }
         stage("Dockerhub Login") {
             steps {
-                echo "logging in to Dockerhub..."
+                script {
+                    echo "logging in to Dockerhub..."
+                    withCredentials([usernamePassword(credentialsId:'Dockerhub', passwordVariable:'DOCKER_PASS', usernameVariable:'DOCKER_USER')]) {
+                        
+                    }
+                }
             }
         }
         stage("Push Image to Dockerhub"){
