@@ -63,7 +63,14 @@ pipeline {
         stage("Github Login") {
             steps {
                 script {
-                    
+                    withCredentials([usernamePassword(credentialsId:'GitHub', passwordVariable:'GITHUB_PASS', usernameVariable:'GITHUB_USER')]) {
+                        sh 'git config --global user.email "jenkins@example.com"'
+                        sh 'git config --global user.name "jenkins-3.droplet"'
+                        sh "git remote set-url origin https://${GITHUB_USER}:${GITHUB_PASS}@github.com/OpsChasingDev/DOB_node-project.git"
+                        sh 'git add .'
+                        sh 'git commit -m "increment app version"'
+                        sh 'git push origin HEAD:jenkinsfile'
+                    }
                 }
             }
         }
