@@ -18,6 +18,8 @@ pipeline {
                         def packageJson = readJSON file: 'package.json'
                         def version = packageJson.version
                         sh "echo $version"
+                        env.IMAGE_NAME = "$version-$BUILD_NUMBER"
+                        sh "echo ${IMAGE_NAME}"
                     }
                 }
             }
