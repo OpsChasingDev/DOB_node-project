@@ -5,3 +5,5 @@
 - (DONE) config Jenkins to increment image version
 - config Jenkins to commit updated versions to git
   - ref [this link](https://www.jenkins.io/blog/2021/07/27/git-credentials-binding-phase-1/)
+  - [Stack Overflow to use Personal Access Token](https://stackoverflow.com/questions/68812200/jenkins-github-plugin-using-personal-access-token-required-after-aug-13-20)
+  - [Github Doc for creating Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
