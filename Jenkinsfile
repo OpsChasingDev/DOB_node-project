@@ -66,7 +66,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId:'GitHub_PAT', passwordVariable:'GITHUB_PAT_PASS', usernameVariable:'GITHUB_PAT_USER')]) {
                         sh 'git config --global user.email "jenkins@example.com"'
                         sh 'git config --global user.name "jenkins-3.droplet"'
-                        sh "git remote set-url origin https://${GITHUB_PAT_PASS}@github.com/OpsChasingDev/DOB_node-project.git"
+                        sh "git remote set-url origin https://${GITHUB_PAT_USER}:${GITHUB_PAT_PASS}@github.com/OpsChasingDev/DOB_node-project.git"
                     }
                 }
             }
