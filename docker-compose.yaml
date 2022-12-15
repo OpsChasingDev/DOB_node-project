@@ -1,0 +1,6 @@
+version: 'version'
+services:
+  nodejs-app:
+    image: opschasingdev/dockerhub:node-app-${IMAGE_NAME}
+    ports:
+      - 3000:3000
