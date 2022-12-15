@@ -1,4 +1,3 @@
-version: 'version'
 services:
   nodejs-app:
     image: opschasingdev/dockerhub:node-app-${IMAGE_NAME}
