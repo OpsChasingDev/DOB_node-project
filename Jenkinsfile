@@ -83,7 +83,7 @@ pipeline {
         stage("Deploy to EC2") {
             steps {
                 script {
-                    def dockerCommand = 'docker run -p 3000:3000 -d opschasingdev/dockerhub:node-app-1.2.0-37'
+                    def dockerCommand = 'docker run -p 3000:3000 -d opschasingdev/dockerhub:node-app-${IMAGE_NAME}'
                     sshagent(['EC2-Server-Key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@54.161.85.14 ${dockerCommand}"
                     }
