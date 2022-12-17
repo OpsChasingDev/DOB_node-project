@@ -80,5 +80,13 @@ pipeline {
                 }
             }
         }
+        stage("Deploy to EC2") {
+            steps {
+                // ssh to EC2 instance
+                    // copy docker-compose.yml to EC2 instance
+                    // authenticate to Dockerhub repo
+                    // run docker-compose command
+            }
+        }
     }
 }
