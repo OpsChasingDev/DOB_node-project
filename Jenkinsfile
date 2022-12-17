@@ -76,7 +76,7 @@ pipeline {
                 script {
                     sh 'git add .'
                     sh 'git commit -m "increment app version"'
-                    sh 'git push origin HEAD:jenkinsfile'
+                    sh 'git push origin HEAD:deployment-to-ec2'
                 }
             }
         }
