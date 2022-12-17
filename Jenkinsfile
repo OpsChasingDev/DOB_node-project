@@ -82,10 +82,14 @@ pipeline {
         }
         stage("Deploy to EC2") {
             steps {
-                // ssh to EC2 instance
-                    // copy docker-compose.yml to EC2 instance
-                    // authenticate to Dockerhub repo
-                    // run docker-compose command
+                script {
+                    sshagent(['EC2-Server-Key']) {
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@54.161.85.14'
+                        // copy docker-compose.yml to EC2 instance
+                        // authenticate to Dockerhub repo
+                        // run docker-compose command
+                    }
+                }
             }
         }
     }
